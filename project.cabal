@@ -1,0 +1,27 @@
+cabal-version:       3.0
+name:                HaskellForeignCPP
+version:             0.0.1
+synopsis:            Minimal Example to use cpp in a haskell library
+
+license:             MIT
+license-file:        LICENSE
+author:              Leonhard Applis
+maintainer:          Leonhard.Applis@Protonmail.com
+extra-source-files:  README.md
+
+library
+  exposed-modules: CPPLib
+  other-extensions: ForeignFunctionInterface
+  build-depends: base
+  hs-source-dirs: lib-src
+  default-language: Haskell2010
+  include-dirs: ./cpp-src
+  cxx-sources: ./cpp-src/some.cpp
+  install-includes: ./cpp-src/some.h
+
+executable cpp_app
+  main-is: program.hs
+  default-language: Haskell2010
+  build-depends: HaskellForeignCPP, 
+                 base
+  hs-source-dirs: program-src

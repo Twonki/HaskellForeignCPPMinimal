@@ -1,0 +1,16 @@
+.vscode
+
+# Cabal and Haskell
+/*.ho
+/*.hi
+/*.o
+*.o
+**.o
+**.hi
+**.ho
+/dist/**
+/dist
+/dist-newstyle/**
+/dist-newstyle
+.ghc.environment.*
+cabal.project.*
